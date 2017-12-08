@@ -21,16 +21,16 @@ Pour la partie serveur:
 #Media# = soit "movie" , soit "serie" selon la classe avec laquelle vous travaillez.
 
 ----Ajout d'un média:----
-    - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode POST avec l'url suivante:
-      http://localhost:8080/#Media#/admin/add#Media#/#titreMedia#
-     - Lancer la requête.
-     - L'outil renverra un "true" si l'ajout c'est effectué correctement et renverra un "false" si inversement.
+- Dans votre outil de test API, remplir le champ URL en spécifiant une méthode POST avec l'url suivante:
+http://localhost:8080/#Media#/admin/add#Media#/#titreMedia#
+- Lancer la requête.
+- L'outil renverra un "true" si l'ajout c'est effectué correctement et renverra un "false" si inversement.
      
 ----Rechercher un média dans la liste des médias:----
-      - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode GET avec l'url suivante:
-        http://localhost8080/#Media#/#titreMedia#
-     - Lancer la requête.
-     - L'outil renverra des informations concernant un média, exemple dans le cas d'une recherche pour le film Batman l'outil renverra:
+- Dans votre outil de test API, remplir le champ URL en spécifiant une méthode GET avec l'url suivante:
+http://localhost8080/#Media#/#titreMedia#
+- Lancer la requête.
+- L'outil renverra des informations concernant un média, exemple dans le cas d'une recherche pour le film Batman l'outil renverra:
      {
       "title": "Batman",
       "id": 1,
@@ -40,9 +40,9 @@ Pour la partie serveur:
       Les informations renvoyées sont , le titre du film, son id, son isbn et son statut d'emprunt(available).
       
 ----Supprimer un média de la liste:----
-            - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode DELETE avec l'url suivante:
-              http://localhost:8080/#Media#/admin/#titreMedia#
-            - L'outil renverra les informations lié au média supprimé si la suppression s'est effectuée correctement
+- Dans votre outil de test API, remplir le champ URL en spécifiant une méthode DELETE avec l'url suivante:
+http://localhost:8080/#Media#/admin/#titreMedia#
+- L'outil renverra les informations lié au média supprimé si la suppression s'est effectuée correctement
               
 ----Emprunter un média----
             - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode PUT avec l'url suivante:
@@ -50,19 +50,18 @@ Pour la partie serveur:
             -L'outil renverra les informations du média et le statut "available" initialment en statut "true" passe à l'état "false"
             
 ----Rendre un média----
-            - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode PUT avec l'url suivante:
-            http://localhost:8080/#Media#/take/#titreMedia#
-            -L'outil renverra les informations du média et le statut "available" en statut "false" passe à l'état "true"  
+ - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode PUT avec l'url suivante:
+http://localhost:8080/#Media#/take/#titreMedia#
+- L'outil renverra les informations du média et le statut "available" en statut "false" passe à l'état "true"  
 
 ----Afficher la liste des médias----
-            - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode GET avec l'url suivante:
-            http://localhost:8080/#Media#/listing
-            -L'outil renverra une liste des médias comprenant toutes leurs informations.
+- Dans votre outil de test API, remplir le champ URL en spécifiant une méthode GET avec l'url suivante:
+ http://localhost:8080/#Media#/listing
+- L'outil renverra une liste des médias comprenant toutes leurs informations.
        
        
 --Partie SOAP--
-
-Non terminé, tests non-concluants
+- Non terminé, tests non-concluants
 
 ## Conçu avec
 
