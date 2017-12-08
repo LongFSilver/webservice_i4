@@ -45,9 +45,9 @@ http://localhost:8080/#Media#/admin/#titreMedia#
 - L'outil renverra les informations lié au média supprimé si la suppression s'est effectuée correctement
               
 ----Emprunter un média----
-            - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode PUT avec l'url suivante:
-            http://localhost:8080/#Media#/take/#titreMedia#
-            -L'outil renverra les informations du média et le statut "available" initialment en statut "true" passe à l'état "false"
+- Dans votre outil de test API, remplir le champ URL en spécifiant une méthode PUT avec l'url suivante:
+http://localhost:8080/#Media#/take/#titreMedia#
+-L'outil renverra les informations du média et le statut "available" initialment en statut "true" passe à l'état "false"
             
 ----Rendre un média----
  - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode PUT avec l'url suivante:
