@@ -1,67 +1,80 @@
 # Projet_Webservice
+### Introduction
+Le projet webservice est un projet ayant pour objectif l'implémentation d'une bibliothèque de médias(films, séries, musics) en ligne gérée en java et utilisant une architecture REST pour les films et séries et une architecture SOAP pour la music.
 
 ### Prérequis
-- Avoir un outil de test d'API, exemple: POSTMAN
-- Avoir un IDE pour les test
-
-### Informations
-Les fichiers .jar ne fonctionnent pas due au fait du l'implémentation de la partie REST ET SOAP dans le même projet.
+- outil de test d'API, exemple: POSTMAN
+- IDE pour les test
 
 ### Installation
 
-Lancer la classe serveur avec un IDE
+Pour la partie serveur:
+- Ouvir le projet pjt_epsi_server dans votre IDE
+- Se rendre dans le main et faire un "Run As java application server" sur la classe "ServerApplication"
+- Une fois le serveur démarrer, ouvrez votre outil de test API
 
-## Running the tests
 
-Explain how to run the automated tests for this system
+## Tests des fonctions
+--Partie REST:--
 
-### Break down into end to end tests
+---Films & Series:---
+#Media# = soit "movie" , soit "serie" selon la classe avec laquelle vous travaillez.
 
-Explain what these tests test and why
+----Ajout d'un média:----
+    - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode POST avec l'url suivante:
+      http://localhost:8080/#Media#/admin/add#Media#/#titreMedia#
+     - Lancer la requête.
+     - L'outil renverra un "true" si l'ajout c'est effectué correctement et renverra un "false" si inversement.
+     
+----Rechercher un média dans la liste des médias:----
+      - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode GET avec l'url suivante:
+        http://localhost8080/#Media#/#titreMedia#
+     - Lancer la requête.
+     - L'outil renverra des informations concernant un média, exemple dans le cas d'une recherche pour le film Batman l'outil renverra:
+     {
+      "title": "Batman",
+      "id": 1,
+       "isbn": 100,
+        "available": true
+      }
+      Les informations renvoyées sont , le titre du film, son id, son isbn et son statut d'emprunt(available).
+      
+----Supprimer un média de la liste:----
+            - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode DELETE avec l'url suivante:
+              http://localhost:8080/#Media#/admin/#titreMedia#
+            - L'outil renverra les informations lié au média supprimé si la suppression s'est effectuée correctement
+              
+----Emprunter un média----
+            - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode PUT avec l'url suivante:
+            http://localhost:8080/#Media#/take/#titreMedia#
+            -L'outil renverra les informations du média et le statut "available" initialment en statut "true" passe à l'état "false"
+            
+----Rendre un média----
+            - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode PUT avec l'url suivante:
+            http://localhost:8080/#Media#/take/#titreMedia#
+            -L'outil renverra les informations du média et le statut "available" en statut "false" passe à l'état "true"  
 
-```
-Give an example
-```
+----Afficher la liste des médias----
+            - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode GET avec l'url suivante:
+            http://localhost:8080/#Media#/listing
+            -L'outil renverra une liste des médias comprenant toutes leurs informations.
+       
+       
+--Partie SOAP--
 
-### And coding style tests
+Non terminé, tests non-concluants
 
-Explain what these tests test and why
+## Conçu avec
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
+## Auteur
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* **François Werquin*
 
-## Versioning
+## Savoirs
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Cours webservice Monsieur Jeffrey Duroyon
+* https://spring.io/guides/gs/producing-web-service/
+* https://www.codenotfound.com/2016/10/spring-ws-soap-web-service-consumer-provider-wsdl-example.html
 
