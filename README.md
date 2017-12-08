@@ -18,7 +18,7 @@ Pour la partie serveur:
 --Partie REST:--
 
 ---Films & Series:---
-#Media# = soit "movie" , soit "serie" selon la classe avec laquelle vous travaillez.
+- #Media# = soit "movie" , soit "serie" selon la classe avec laquelle vous travaillez.
 
 ----Ajout d'un média:----
 - Dans votre outil de test API, remplir le champ URL en spécifiant une méthode POST avec l'url suivante:
